@@ -43,4 +43,3 @@ ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK
 
 **Video** - https://drive.google.com/drive/folders/1u76RGgwkakKqHV_WSMLZuZ8VOHN1u0Xl?usp=drive_link
 
-**Web Link** - http://34.168.71.13:8501
