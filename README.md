@@ -33,7 +33,7 @@ Airflow pipelines automate the acquisition and processing of GAIA dataset PDFs u
 | Cloud & Storage | Google Cloud Platform (GCP) |
 | Orchestration | Apache Airflow |
 | Backend | FastAPI, Python, JWT |
-| Frontend | Streamlit |
+| Frontend | Streamlit, JavaScript |
 | PDF Extraction | PyMuPDF, Google Document AI |
 | DevOps | Docker, Docker Compose |
 | Version Control | Git |
