@@ -85,8 +85,8 @@ Airflow pipelines automate the acquisition and processing of GAIA dataset PDFs u
 
 ```bash
 # Clone the repo
-git clone <your-repo-url>
-cd <repo-name>
+git clone https://github.com/Chinmay1220/Automated_Document_Processing_System.git
+cd Automated_Document_Processing_System
 
 # Set up environment variables
 cp .env.example .env
