@@ -1,6 +1,6 @@
 # Scalable Automated Text Extraction & OpenAI-based Interactive Query System
 
-An end-to-end platform for automating PDF text extraction from the GAIA dataset and enabling users to securely interact with extracted content through a FastAPI + Streamlit application — with JWT authentication and cloud deployment.
+An end-to-end platform for automating PDF text extraction from the GAIA dataset and enabling users to securely interact with extracted content through a FastAPI + Streamlit application - with JWT authentication and cloud deployment.
 
 ---
 
