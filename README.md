@@ -1,43 +1,104 @@
-# Scalable, Automated Text Extraction OpenAI based Interactive Query System 
+# Scalable Automated Text Extraction & OpenAI-based Interactive Query System
 
-**Project Overview :**
-The project focuses on automating the extraction of text from PDFs in the GAIA dataset and developing a client-facing application that enables users to securely interact with the extracted data. In the first part, Airflow pipelines will automate the data acquisition and processing of PDF files, using both an open-source tool like Pymupdf and an enterprise-level service such as Google document ai api for efficient text extraction. This extracted information will be stored in a repository like S3 for easy retrieval. In the second part, the backend will be implemented using FastAPI, featuring secure user registration and login with JWT authentication. Only authenticated users will access the protected endpoints, and the backend will manage all business logic, including querying the preprocessed PDF data. A user-friendly frontend built in Streamlit will allow users to register, log in, and query the data, offering the choice between open-source and API-based PDF extracts. The entire solution will be containerized and deployed on a public cloud using Docker Compose, ensuring seamless, secure access for users.
+An end-to-end platform for automating PDF text extraction from the GAIA dataset and enabling users to securely interact with extracted content through a FastAPI + Streamlit application — with JWT authentication and cloud deployment.
 
-**Key Technologies :**
+---
 
-Google Cloud Platform, Streamlit, JS, VS code, CodeLabs, Git, Python, Docker, Airflow, FastAPI, JWT
+## Overview
 
-**Desired Outcome or Solution :**
+Airflow pipelines automate the acquisition and processing of GAIA dataset PDFs using both open-source (PyMuPDF) and enterprise-grade (Google Document AI) extraction methods. Extracted text is stored in GCP for retrieval. A FastAPI backend with JWT authentication serves the data to a Streamlit frontend where users can register, log in, and query PDF content interactively.
 
-Automate text extraction from GAIA dataset PDFs using Airflow pipelines for efficient data acquisition.
+---
 
-Integrate both open-source(pymupdf) and enterprise (Google Documnet API) options for text extraction.
+## Architecture
 
-Ensure extracted data is accurately stored in a data repository (CGP) for easy retrieval.
+![Architecture Diagram](https://github.com/user-attachments/assets/24c97ffd-f317-44a7-86f9-5198200f8807)
 
-Develop a client-facing application with FastAPI and Streamlit for user registration, login, and interaction with extracted PDF content.
+---
 
-Secure the application using JWT authentication, protecting all API endpoints except registration and login.
+## Key Features
 
-Provide users with a question-answering interface to query specific PDF extracts.
+- **Automated PDF Ingestion** — Airflow pipelines handle data acquisition and text extraction at scale
+- **Dual Extraction Methods** — PyMuPDF (open-source) and Google Document AI (enterprise) for flexible, accurate extraction
+- **Secure Authentication** — JWT-based user registration and login with protected API endpoints
+- **Interactive Q&A** — Users query specific PDF extracts through a clean Streamlit interface
+- **Fully Containerized** — Docker Compose deployment on public cloud for scalable access
 
-Containerize the FastAPI and Streamlit applications using Docker Compose and deploy them on a public cloud for seamless, scalable access.
+---
 
-**Architecture diagram :**
+## Tech Stack
 
-![image](https://github.com/user-attachments/assets/24c97ffd-f317-44a7-86f9-5198200f8807)
+| Category | Tools |
+|---|---|
+| Cloud & Storage | Google Cloud Platform (GCP) |
+| Orchestration | Apache Airflow |
+| Backend | FastAPI, Python, JWT |
+| Frontend | Streamlit |
+| PDF Extraction | PyMuPDF, Google Document AI |
+| DevOps | Docker, Docker Compose |
+| Version Control | Git |
 
+---
 
+## Project Structure
 
-**Contribution :**
+```
+├── backend/
+│   ├── main.py              # FastAPI app — auth, endpoints, business logic
+│   ├── auth.py              # JWT authentication
+│   └── pdf_query.py         # PDF querying logic
+├── frontend/
+│   └── app.py               # Streamlit UI — register, login, query
+├── airflow/
+│   └── dags/                # Airflow DAGs for PDF ingestion and extraction
+├── Dockerfile.fastapi
+├── Dockerfile.streamlit
+└── docker-compose.yml
+```
 
-WE ATTEST THAT WE HAVEN’T USED ANY OTHER STUDENTS’ WORK IN OUR 
-ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK
+---
 
+## How It Works
 
-**Documentation files Team_9** 
+### 1. Data Ingestion
+- Airflow DAGs pull PDFs from the GAIA dataset
+- Text is extracted using PyMuPDF or Google Document AI
+- Extracted content is stored in GCP for retrieval
 
-**Google Doc** - https://docs.google.com/document/d/1bWeRfD-PZkUzgzmZkl6oEnWgsRIx5cKflwPPp1grAXk/edit?tab=t.0#heading=h.gjdgxs
+### 2. Authentication
+- Users register and log in via FastAPI endpoints
+- JWT tokens are issued on login
+- All endpoints except registration and login are protected
 
-**Video** - https://drive.google.com/drive/folders/1u76RGgwkakKqHV_WSMLZuZ8VOHN1u0Xl?usp=drive_link
+### 3. Query Interface
+- Authenticated users access the Streamlit frontend
+- Users select between open-source or API-based PDF extracts
+- Natural language queries return relevant answers from the extracted content
 
+### 4. Deployment
+- FastAPI and Streamlit containerized with Docker Compose
+- Deployed on GCP with public access
+
+---
+
+## Getting Started
+
+```bash
+# Clone the repo
+git clone <your-repo-url>
+cd <repo-name>
+
+# Set up environment variables
+cp .env.example .env
+# Add your GCP, Google Document AI, and JWT secret credentials
+
+# Run with Docker Compose
+docker-compose up --build
+```
+
+---
+
+## Resources
+
+- [Documentation](https://docs.google.com/document/d/1bWeRfD-PZkUzgzmZkl6oEnWgsRIx5cKflwPPp1grAXk/edit?tab=t.0#heading=h.gjdgxs)
+- [Demo Video](https://drive.google.com/drive/folders/1u76RGgwkakKqHV_WSMLZuZ8VOHN1u0Xl?usp=drive_link)
