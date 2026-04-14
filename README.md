@@ -5,7 +5,7 @@ The project focuses on automating the extraction of text from PDFs in the GAIA d
 
 **Key Technologies :**
 
-Google Cloud Platform, Streamlit, OpenAI, VS code, CodeLabs, Git, Python, Docker, Airflow, FastAPI, JWT
+Google Cloud Platform, Streamlit, JS, VS code, CodeLabs, Git, Python, Docker, Airflow, FastAPI, JWT
 
 **Desired Outcome or Solution :**
 
